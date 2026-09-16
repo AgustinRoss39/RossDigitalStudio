@@ -2,6 +2,7 @@ import { CTA } from "@/components/CTA";
 import { PricingCard } from "@/components/PricingCard";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionTitle } from "@/components/SectionTitle";
+import { WhatsAppIcon } from "@/components/Icons";
 import { faqs, webPlans, webProjects } from "@/lib/data";
 import { whatsappUrl } from "@/lib/whatsapp";
 
@@ -17,7 +18,7 @@ export default function WebsPage() {
             <span className="eyebrow">WEB DESIGN</span>
             <h1>Tu negocio merece<br/><em>su propio lugar.</em></h1>
             <p>Diseñamos webs rápidas, claras y pensadas para que tu cliente encuentre lo que necesita sin perderse.</p>
-            <a className="button buttonDark" href={wa} target="_blank" rel="noreferrer">Pedir presupuesto <span>↗</span></a>
+            <a className="button buttonDark whatsappButton" href={wa} target="_blank" rel="noreferrer">Pedir presupuesto <span className="iconBubble"><WhatsAppIcon className="waIcon" /></span></a>
           </div>
           <div className="webHeroVisual">
             <div className="stackCard cardA">Responsive <span>01</span></div>
