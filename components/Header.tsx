@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Logo } from "./Logo";
+import { WhatsAppIcon } from "./Icons";
 import { whatsappUrl } from "@/lib/whatsapp";
 
 export function Header() {
@@ -22,7 +23,10 @@ export function Header() {
           <Link href="/invitaciones" onClick={() => setOpen(false)}>Invitaciones</Link>
           <Link href="/portfolio" onClick={() => setOpen(false)}>Portfolio</Link>
           <Link href="/#proceso" onClick={() => setOpen(false)}>Proceso</Link>
-          <a className="button buttonDark buttonSmall" href={wa} target="_blank" rel="noreferrer">Pedir presupuesto</a>
+          <a className="button buttonDark buttonSmall navWhatsapp" href={wa} target="_blank" rel="noreferrer">
+            <WhatsAppIcon className="waIcon" />
+            Pedir presupuesto
+          </a>
         </nav>
       </div>
     </header>
