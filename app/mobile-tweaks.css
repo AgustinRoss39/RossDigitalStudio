@@ -35,6 +35,11 @@
   .innerHero .button{min-height:56px;padding:12px 15px 12px 20px;border-radius:18px;justify-content:space-between;min-width:210px}
   .splitInfo{gap:34px}
   .splitInfo h2{font-size:48px}
+  .featureGrid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;width:100%!important;overflow:visible!important}
+  .featureGrid article{min-width:0!important;width:auto!important;padding:24px 18px!important;border-radius:22px!important;overflow:hidden}
+  .featureGrid article h3{font-size:clamp(28px,8vw,38px)!important;line-height:1!important;overflow-wrap:anywhere}
+  .featureGrid article p{font-size:13px!important;line-height:1.55!important;margin-bottom:0}
+  .featureGrid article>span{font-size:22px!important}
   .waFloat{right:18px;bottom:18px;width:52px;height:52px}
   .waFloat .waIcon{width:28px;height:28px}
 }
@@ -46,4 +51,7 @@
   .innerHero{padding:62px 0 56px}
   .serviceCard{min-height:390px;padding:30px 24px}
   .sectionTitle{margin-bottom:28px}
+  .featureGrid{grid-template-columns:1fr!important}
+  .featureGrid article{padding:24px 22px!important}
+  .featureGrid article h3{font-size:36px!important}
 }
