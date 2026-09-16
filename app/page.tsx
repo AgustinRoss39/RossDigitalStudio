@@ -3,6 +3,7 @@ import { CTA } from "@/components/CTA";
 import { PricingCard } from "@/components/PricingCard";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionTitle } from "@/components/SectionTitle";
+import { ArrowUpRightIcon } from "@/components/Icons";
 import { invitePlans, inviteProjects, webPlans, webProjects } from "@/lib/data";
 import { whatsappUrl } from "@/lib/whatsapp";
 
@@ -21,8 +22,8 @@ export default function Home() {
             <h1>Tu idea.<br/><em>Nuestra parte digital.</em></h1>
             <p>Webs rápidas, lindas y funcionales + invitaciones digitales pensadas para marcas, negocios y momentos importantes.</p>
             <div className="heroActions">
-              <Link className="button buttonDark" href="/webs">Quiero una web <span>↗</span></Link>
-              <Link className="button buttonOutline" href="/invitaciones">Quiero una invitación <span>↗</span></Link>
+              <Link className="button buttonDark" href="/webs">Quiero una web <span className="iconBubble"><ArrowUpRightIcon className="actionIcon" /></span></Link>
+              <Link className="button buttonOutline" href="/invitaciones">Quiero una invitación <span className="iconBubble"><ArrowUpRightIcon className="actionIcon" /></span></Link>
             </div>
             <div className="heroMeta">
               <span><b>01</b> Diseño personalizado</span>
@@ -38,7 +39,7 @@ export default function Home() {
               <div className="browserContent">
                 <span className="miniLabel">TU MARCA ACÁ</span>
                 <h3>Una web que<br/>se siente tuya.</h3>
-                <div className="mockLine large"/><div className="mockLine"/><div className="mockButton">VER MÁS ↗</div>
+                <div className="mockLine large"/><div className="mockLine"/><div className="mockButton">VER MÁS</div>
               </div>
             </div>
             <div className="phoneCard">
@@ -62,7 +63,7 @@ export default function Home() {
               <h3>Webs</h3>
               <p>Para emprendimientos, profesionales, comercios y marcas que necesitan un lugar propio en internet.</p>
               <ul><li>Landing pages</li><li>Sitios institucionales</li><li>Webs personalizadas</li></ul>
-              <a href={webWa} target="_blank" rel="noreferrer">Consultar por mi web <span>↗</span></a>
+              <a href={webWa} target="_blank" rel="noreferrer">Consultar por mi web <ArrowUpRightIcon className="actionIcon" /></a>
             </article>
             <article className="serviceCard violetCard">
               <span className="serviceNumber">02</span>
@@ -70,7 +71,7 @@ export default function Home() {
               <h3>Invitaciones</h3>
               <p>Invitaciones digitales para cumpleaños, XV, bodas, eventos y cualquier momento que quieras compartir.</p>
               <ul><li>Modelos listos</li><li>Diseños temáticos</li><li>Diseños desde cero</li></ul>
-              <a href={inviteWa} target="_blank" rel="noreferrer">Quiero mi invitación <span>↗</span></a>
+              <a href={inviteWa} target="_blank" rel="noreferrer">Quiero mi invitación <ArrowUpRightIcon className="actionIcon" /></a>
             </article>
           </div>
         </div>
@@ -82,7 +83,7 @@ export default function Home() {
           <div className="projectGrid homeProjects">
             {webProjects.map((project) => <ProjectCard key={project.title} {...project} />)}
           </div>
-          <div className="sectionAction"><Link className="textLink" href="/portfolio">Ver portfolio completo <span>↗</span></Link></div>
+          <div className="sectionAction"><Link className="textLink" href="/portfolio">Ver portfolio completo <ArrowUpRightIcon className="actionIcon" /></Link></div>
         </div>
       </section>
 
@@ -94,7 +95,7 @@ export default function Home() {
             <PricingCard plan={webPlans[1]} ctaHref={webWa} />
             <PricingCard plan={invitePlans[1]} ctaHref={inviteWa} />
           </div>
-          <div className="sectionAction double"><Link className="textLink" href="/webs">Ver planes web ↗</Link><Link className="textLink" href="/invitaciones">Ver invitaciones ↗</Link></div>
+          <div className="sectionAction double"><Link className="textLink" href="/webs">Ver planes web <ArrowUpRightIcon className="actionIcon" /></Link><Link className="textLink" href="/invitaciones">Ver invitaciones <ArrowUpRightIcon className="actionIcon" /></Link></div>
         </div>
       </section>
 
