@@ -2,6 +2,7 @@ import { CTA } from "@/components/CTA";
 import { PricingCard } from "@/components/PricingCard";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionTitle } from "@/components/SectionTitle";
+import { WhatsAppIcon } from "@/components/Icons";
 import { faqs, invitePlans, inviteProjects } from "@/lib/data";
 import { whatsappUrl } from "@/lib/whatsapp";
 
@@ -17,7 +18,7 @@ export default function InvitacionesPage() {
             <span className="eyebrow">DIGITAL INVITES</span>
             <h1>Una invitación<br/><em>que da ganas de abrir.</em></h1>
             <p>Un solo link con toda la información de tu evento, pensado para compartir fácil y verse increíble desde el celular.</p>
-            <a className="button buttonDark" href={wa} target="_blank" rel="noreferrer">Quiero mi invitación <span>↗</span></a>
+            <a className="button buttonDark whatsappButton" href={wa} target="_blank" rel="noreferrer">Quiero mi invitación <span className="iconBubble"><WhatsAppIcon className="waIcon" /></span></a>
           </div>
           <div className="invitePhoneMock">
             <div className="invitePhoneTop">✦</div>
