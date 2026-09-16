@@ -1,3 +1,5 @@
+import { WhatsAppIcon } from "./Icons";
+
 type Plan = {
   name: string;
   price: string;
@@ -22,7 +24,10 @@ export function PricingCard({ plan, ctaHref, ctaLabel = "Consultar" }: Props) {
       <ul>
         {plan.features.map((feature) => <li key={feature}><span>✦</span>{feature}</li>)}
       </ul>
-      <a className={plan.featured ? "button buttonViolet" : "button buttonOutline"} href={ctaHref} target="_blank" rel="noreferrer">{ctaLabel} <span>↗</span></a>
+      <a className={plan.featured ? "button buttonViolet" : "button buttonOutline"} href={ctaHref} target="_blank" rel="noreferrer">
+        {ctaLabel}
+        <span className="iconBubble"><WhatsAppIcon className="waIcon" /></span>
+      </a>
     </article>
   );
 }
