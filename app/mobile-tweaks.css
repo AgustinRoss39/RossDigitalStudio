@@ -1,0 +1,48 @@
+.actionIcon{width:18px;height:18px;flex:0 0 auto;display:block}.waIcon{width:20px;height:20px;display:block}.button{min-height:50px;border-radius:16px;padding:14px 20px;letter-spacing:-.01em;box-shadow:0 8px 24px rgba(23,23,28,.06)}.buttonDark{box-shadow:0 12px 30px rgba(23,23,28,.16)}.buttonOutline{background:rgba(255,255,255,.5);border-color:rgba(23,23,28,.16)}.buttonCream{background:#fffdf8;border:1px solid rgba(255,255,255,.2);box-shadow:0 12px 30px rgba(0,0,0,.15)}.button .iconBubble{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.13)}.buttonCream .iconBubble{background:#25d366;color:white}.buttonOutline .iconBubble{background:rgba(105,82,255,.1);color:var(--violet)}.waFloat{position:fixed;right:24px;bottom:24px;z-index:60;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;box-shadow:0 16px 36px rgba(37,211,102,.28);border:3px solid rgba(255,255,255,.92);transition:.22s ease}.waFloat:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 18px 42px rgba(37,211,102,.38)}.waFloat .waIcon{width:31px;height:31px}.ctaWhatsapp{gap:11px}.ctaWhatsapp .waIcon{width:20px;height:20px}.nav .navWhatsapp{display:inline-flex;align-items:center;gap:8px}.nav .navWhatsapp .waIcon{width:17px;height:17px}
+
+@media (max-width: 760px){
+  .container{width:min(100% - 32px,1180px)}
+  .navWrap{min-height:72px}
+  .brandMark{width:44px;height:44px;font-size:28px}
+  .section{padding:68px 0}
+  .sectionTitle{margin-bottom:34px}
+  .sectionTitle h2{font-size:clamp(42px,13vw,58px);line-height:.98;margin:12px 0 16px}
+  .sectionTitle p{font-size:15px;line-height:1.62}
+  .hero{min-height:auto;padding:70px 0 62px}
+  .heroCopy h1{font-size:clamp(58px,16vw,76px);margin:22px 0 24px;line-height:.9}
+  .heroCopy>p{font-size:16px;line-height:1.62}
+  .heroActions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:28px}
+  .heroActions .button{width:100%;min-height:58px;justify-content:space-between;padding:13px 16px 13px 22px;border-radius:18px;font-size:14px}
+  .heroMeta{gap:11px;margin-top:30px;display:grid}
+  .serviceCard{min-height:420px;padding:34px 28px;border-radius:24px}
+  .serviceIcon{margin-bottom:32px}
+  .serviceCard h3{font-size:52px}
+  .serviceCard ul{margin-top:24px;margin-bottom:24px}
+  .projectBody{padding:22px}
+  .projectBody h3{font-size:30px}
+  .sectionAction{margin-top:24px}
+  .pricingCard{min-height:500px;padding:28px}
+  .processCard{padding:30px 24px 36px;min-height:230px}
+  .processCard h3{margin-top:28px}
+  .ctaBand{padding:66px 0}
+  .ctaGrid{gap:30px}
+  .ctaGrid h2{font-size:clamp(50px,14vw,66px)}
+  .ctaGrid p{font-size:15px;margin-bottom:22px}
+  .ctaGrid .button{width:100%;justify-content:space-between;min-height:58px;padding:12px 15px 12px 22px;border-radius:18px}
+  .innerHero{padding:72px 0 64px}
+  .innerHero h1,.portfolioHero h1{font-size:clamp(56px,15vw,72px);margin:20px 0 22px}
+  .innerHero p,.portfolioHero p{font-size:15px;margin-bottom:24px}
+  .splitInfo{gap:34px}
+  .splitInfo h2{font-size:48px}
+  .waFloat{right:18px;bottom:18px;width:58px;height:58px;border-width:3px}
+  .waFloat .waIcon{width:29px;height:29px}
+}
+
+@media (max-width: 420px){
+  .section{padding:58px 0}
+  .hero{padding:62px 0 54px}
+  .ctaBand{padding:58px 0}
+  .innerHero{padding:62px 0 56px}
+  .serviceCard{min-height:390px;padding:30px 24px}
+  .sectionTitle{margin-bottom:28px}
+}
