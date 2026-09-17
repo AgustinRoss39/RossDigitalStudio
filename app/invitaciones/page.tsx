@@ -1,8 +1,10 @@
+import Link from "next/link";
 import { CTA } from "@/components/CTA";
 import { PricingCard } from "@/components/PricingCard";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionTitle } from "@/components/SectionTitle";
-import { WhatsAppIcon } from "@/components/Icons";
+import { WhatsAppIcon, ArrowUpRightIcon } from "@/components/Icons";
+import { TrackedLink } from "@/components/TrackedLink";
 import { faqs, invitePlans, inviteProjects } from "@/lib/data";
 import { whatsappUrl } from "@/lib/whatsapp";
 
@@ -18,7 +20,12 @@ export default function InvitacionesPage() {
             <span className="eyebrow">DIGITAL INVITES</span>
             <h1>Una invitación<br/><em>que da ganas de abrir.</em></h1>
             <p>Un solo link con toda la información de tu evento, pensado para compartir fácil y verse increíble desde el celular.</p>
-            <a className="button buttonDark whatsappButton" href={wa} target="_blank" rel="noreferrer">Quiero mi invitación <span className="iconBubble"><WhatsAppIcon className="waIcon" /></span></a>
+            <div className="catalogCtaRow">
+              <Link className="button buttonDark" href="/invitaciones/modelos">Ver catálogo <ArrowUpRightIcon className="actionIcon" /></Link>
+              <TrackedLink className="button buttonOutline whatsappButton" href={wa} target="_blank" rel="noreferrer" eventName="whatsapp_click" eventData={{ source: "invite_hero" }}>
+                Consultar <WhatsAppIcon className="waIcon" />
+              </TrackedLink>
+            </div>
           </div>
           <div className="invitePhoneMock">
             <div className="invitePhoneTop">✦</div>
@@ -47,10 +54,11 @@ export default function InvitacionesPage() {
 
       <section className="section">
         <div className="container">
-          <SectionTitle eyebrow="PORTFOLIO" title="Temáticas que ya pasaron por Ross." text="Estas son algunas de las invitaciones digitales desarrolladas hasta ahora." />
+          <SectionTitle eyebrow="CATÁLOGO" title="Modelos que podés convertir en tu invitación." text="Estamos renovando las invitaciones más viejas, pero ya podés elegir una temática y reservarla." />
           <div className="inviteGallery">
-            {inviteProjects.map((project) => <ProjectCard key={project.title} {...project} portrait />)}
+            {inviteProjects.slice(0,4).map((project) => <ProjectCard key={project.title} {...project} portrait />)}
           </div>
+          <div className="sectionAction"><Link className="textLink" href="/invitaciones/modelos">Ver catálogo completo <ArrowUpRightIcon className="actionIcon" /></Link></div>
         </div>
       </section>
 
