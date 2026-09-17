@@ -1,4 +1,7 @@
+import Link from "next/link";
+
 type Props = {
+  slug?: string;
   title: string;
   type: string;
   tags: string[];
@@ -9,7 +12,7 @@ type Props = {
   portrait?: boolean;
 };
 
-export function ProjectCard({ title, type, tags, description, href, previewUrl, theme = "violet", portrait }: Props) {
+export function ProjectCard({ slug, title, type, tags, description, href, previewUrl, theme = "violet", portrait }: Props) {
   const body = (
     <article className={portrait ? "projectCard inviteCard" : "projectCard"}>
       <div className={portrait ? `projectImage portrait theme-${theme}` : "projectImage"}>
@@ -24,10 +27,10 @@ export function ProjectCard({ title, type, tags, description, href, previewUrl, 
             <small>INVITACIÓN DIGITAL</small>
             <strong>{title}</strong>
             <div className="invitePreviewLine" />
-            <span className="invitePreviewButton">ABRIR INVITACIÓN</span>
+            <span className="invitePreviewButton">VER MODELO</span>
           </div>
         )}
-        {href && <div className="projectOverlay"><span>Ver proyecto ↗</span></div>}
+        {slug && previewUrl && <div className="projectOverlay"><span>Ver caso de estudio ↗</span></div>}
       </div>
       <div className="projectBody">
         <div>
@@ -39,5 +42,8 @@ export function ProjectCard({ title, type, tags, description, href, previewUrl, 
       </div>
     </article>
   );
-  return href ? <a className="projectLink" href={href} target="_blank" rel="noreferrer">{body}</a> : body;
+
+  if (slug && previewUrl) return <Link className="projectLink" href={`/portfolio/${slug}`}>{body}</Link>;
+  if (href) return <a className="projectLink" href={href} target="_blank" rel="noreferrer">{body}</a>;
+  return body;
 }
