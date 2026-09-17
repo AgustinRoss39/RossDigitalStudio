@@ -4,6 +4,7 @@ import { PricingCard } from "@/components/PricingCard";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionTitle } from "@/components/SectionTitle";
 import { ArrowUpRightIcon } from "@/components/Icons";
+import { TrackedLink } from "@/components/TrackedLink";
 import { invitePlans, inviteProjects, webPlans, webProjects } from "@/lib/data";
 import { whatsappUrl } from "@/lib/whatsapp";
 
@@ -63,7 +64,7 @@ export default function Home() {
               <h3>Webs</h3>
               <p>Para emprendimientos, profesionales, comercios y marcas que necesitan un lugar propio en internet.</p>
               <ul><li>Landing pages</li><li>Sitios institucionales</li><li>Webs personalizadas</li></ul>
-              <a href={webWa} target="_blank" rel="noreferrer">Consultar por mi web <ArrowUpRightIcon className="actionIcon" /></a>
+              <TrackedLink href={webWa} target="_blank" rel="noreferrer" eventName="whatsapp_click" eventData={{ source: "home_web_service" }}>Consultar por mi web <ArrowUpRightIcon className="actionIcon" /></TrackedLink>
             </article>
             <article className="serviceCard violetCard">
               <span className="serviceNumber">02</span>
@@ -71,7 +72,7 @@ export default function Home() {
               <h3>Invitaciones</h3>
               <p>Invitaciones digitales para cumpleaños, XV, bodas, eventos y cualquier momento que quieras compartir.</p>
               <ul><li>Modelos listos</li><li>Diseños temáticos</li><li>Diseños desde cero</li></ul>
-              <a href={inviteWa} target="_blank" rel="noreferrer">Quiero mi invitación <ArrowUpRightIcon className="actionIcon" /></a>
+              <TrackedLink href={inviteWa} target="_blank" rel="noreferrer" eventName="whatsapp_click" eventData={{ source: "home_invite_service" }}>Quiero mi invitación <ArrowUpRightIcon className="actionIcon" /></TrackedLink>
             </article>
           </div>
         </div>
@@ -117,8 +118,9 @@ export default function Home() {
         <div className="container">
           <SectionTitle eyebrow="INVITACIONES" title="Un link también puede generar expectativa." text="Diseños que acompañan la temática de tu evento y concentran toda la información en un solo lugar." />
           <div className="inviteStripGrid">
-            {inviteProjects.map((project) => <ProjectCard key={project.title} {...project} portrait />)}
+            {inviteProjects.slice(0,4).map((project) => <ProjectCard key={project.title} {...project} portrait />)}
           </div>
+          <div className="sectionAction"><Link className="textLink" href="/invitaciones/modelos">Ver catálogo de modelos <ArrowUpRightIcon className="actionIcon" /></Link></div>
         </div>
       </section>
 
