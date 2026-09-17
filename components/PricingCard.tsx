@@ -1,4 +1,5 @@
 import { WhatsAppIcon } from "./Icons";
+import { TrackedLink } from "./TrackedLink";
 
 type Plan = {
   name: string;
@@ -24,10 +25,17 @@ export function PricingCard({ plan, ctaHref, ctaLabel = "Consultar" }: Props) {
       <ul>
         {plan.features.map((feature) => <li key={feature}><span>✦</span>{feature}</li>)}
       </ul>
-      <a className={plan.featured ? "button buttonViolet" : "button buttonOutline"} href={ctaHref} target="_blank" rel="noreferrer">
+      <TrackedLink
+        className={plan.featured ? "button buttonViolet" : "button buttonOutline"}
+        href={ctaHref}
+        target="_blank"
+        rel="noreferrer"
+        eventName="whatsapp_click"
+        eventData={{ source: "pricing", plan: plan.name }}
+      >
         {ctaLabel}
         <span className="iconBubble"><WhatsAppIcon className="waIcon" /></span>
-      </a>
+      </TrackedLink>
     </article>
   );
 }
