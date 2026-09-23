@@ -25,7 +25,7 @@ export default function PortfolioPage() {
       </section>
       <section className="section altSection">
         <div className="container">
-          <SectionTitle eyebrow="INVITACIONES" title="Invitaciones digitales" text="Estamos renovando los modelos anteriores. El catálogo queda preparado para ir reemplazándolos a medida que terminemos las nuevas versiones." />
+          <SectionTitle eyebrow="INVITACIONES" title="Invitaciones digitales" text="Una selección de modelos reales. Tocá cualquier invitación para abrir la demo completa y recorrerla." />
           <div className="inviteGallery">{inviteProjects.slice(0,4).map((p) => <ProjectCard key={p.title} {...p} portrait />)}</div>
           <div className="sectionAction"><Link className="textLink" href="/invitaciones/modelos">Ver catálogo completo <ArrowUpRightIcon className="actionIcon" /></Link></div>
         </div>

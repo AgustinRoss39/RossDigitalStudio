@@ -13,11 +13,12 @@ type Props = {
 };
 
 export function ProjectCard({ slug, title, type, tags, description, href, previewUrl, theme = "violet", portrait }: Props) {
+  const isInvitation = Boolean(portrait && href);
   const body = (
     <article className={portrait ? "projectCard inviteCard" : "projectCard"}>
       <div className={portrait ? `projectImage portrait theme-${theme}` : "projectImage"}>
         {previewUrl ? (
-          <div className="livePreview" aria-hidden="true">
+          <div className={portrait ? "livePreview livePreviewPortrait" : "livePreview"} aria-hidden="true">
             <div className="livePreviewBar"><i/><i/><i/><span>{title}</span></div>
             <iframe src={previewUrl} title={`Vista previa de ${title}`} loading="lazy" tabIndex={-1} />
           </div>
@@ -30,7 +31,11 @@ export function ProjectCard({ slug, title, type, tags, description, href, previe
             <span className="invitePreviewButton">VER MODELO</span>
           </div>
         )}
-        {slug && previewUrl && <div className="projectOverlay"><span>Ver caso de estudio ↗</span></div>}
+        {previewUrl && (slug || href) && (
+          <div className="projectOverlay">
+            <span>{isInvitation ? "Ver invitación ↗" : "Ver caso de estudio ↗"}</span>
+          </div>
+        )}
       </div>
       <div className="projectBody">
         <div>
@@ -42,6 +47,10 @@ export function ProjectCard({ slug, title, type, tags, description, href, previe
       </div>
     </article>
   );
+
+  if (isInvitation && href) {
+    return <a className="projectLink" href={href} target="_blank" rel="noreferrer" aria-label={`Abrir invitación ${title}`}>{body}</a>;
+  }
 
   if (slug && previewUrl) return <Link className="projectLink" href={`/portfolio/${slug}`}>{body}</Link>;
   if (href) return <a className="projectLink" href={href} target="_blank" rel="noreferrer">{body}</a>;
