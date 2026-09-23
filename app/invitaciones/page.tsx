@@ -54,7 +54,7 @@ export default function InvitacionesPage() {
 
       <section className="section">
         <div className="container">
-          <SectionTitle eyebrow="CATÁLOGO" title="Modelos que podés convertir en tu invitación." text="Estamos renovando las invitaciones más viejas, pero ya podés elegir una temática y reservarla." />
+          <SectionTitle eyebrow="CATÁLOGO" title="Modelos que podés convertir en tu invitación." text="Mirá una vista previa de cada modelo y abrí la invitación completa para recorrerla antes de elegir." />
           <div className="inviteGallery">
             {inviteProjects.slice(0,4).map((project) => <ProjectCard key={project.title} {...project} portrait />)}
           </div>
